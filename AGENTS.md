@@ -121,3 +121,14 @@ Read `docs/README.md` inside that installed package first, then read the relevan
 
 This block is written and re-added by `turbo` before repository-scoped commands when an AI agent is detected. In the Turborepo source repository, its template is defined in `crates/turborepo-cli/src/cli/agent_guidance.rs`. Removing the managed block while updates are enabled means a later qualifying invocation will add it again. Set `"agentGuidance": false` in the root `turbo.json` or `turbo.jsonc` to opt out; this does not remove an existing block. Keep the block committed with your work to avoid an uncommitted change on the next agent invocation.
 <!-- END:turborepo-agent-rules -->
+
+## Binding Quality Principle (2026-10-23)
+
+> Care before speed. Quality before quantity. Develop every feature carefully, verify it thoroughly, and deliver reliable results. No half-finished solutions, unnecessary complexity, or compromises on stability.
+
+- Read the current source, project instructions, and relevant interfaces before making changes. Never implement based on unverified assumptions.
+- Keep changes focused, understandable, compatible, and maintainable. Reuse existing mechanisms instead of adding unnecessary layers.
+- Validate relevant error cases, data integrity, security, regressions, and performance according to the scope of the change.
+- Run appropriate builds and tests when possible. Never claim a test passed or a feature is complete without verification.
+- Fix root causes rather than masking symptoms. Document remaining uncertainties or unfinished work explicitly.
+- Preserve all existing repository-specific rules. Where guidance overlaps, apply the stricter compatible requirement.
